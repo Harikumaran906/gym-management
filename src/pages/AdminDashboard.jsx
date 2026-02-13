@@ -21,27 +21,22 @@ export default function AdminDashboard() {
 
   const [msg, setMsg] = useState("");
 
-  // Add member
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [joinDate, setJoinDate] = useState("");
 
-  // Edit member
   const [editId, setEditId] = useState("");
   const [editName, setEditName] = useState("");
   const [editPhone, setEditPhone] = useState("");
 
-  // Package
   const [pkgMemberId, setPkgMemberId] = useState("");
   const [pkgName, setPkgName] = useState("Monthly");
   const [pkgFee, setPkgFee] = useState("1000");
 
-  // Bill
   const [billMemberId, setBillMemberId] = useState("");
   const [billAmount, setBillAmount] = useState("");
   const [billMonth, setBillMonth] = useState("");
 
-  // Notification
   const [noteText, setNoteText] = useState("");
 
   async function refresh() {

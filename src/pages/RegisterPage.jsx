@@ -4,7 +4,7 @@ import { registerUser } from "../services/authService";
 import { validateMemberLink } from "../services/gymService";
 
 export default function RegisterPage() {
-  const [type, setType] = useState("user"); // user | member
+  const [type, setType] = useState("user"); 
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -88,7 +88,7 @@ export default function RegisterPage() {
               <input
                 value={memberId}
                 onChange={(e) => setMemberId(e.target.value)}
-                placeholder="Copy from admin member list"
+                placeholder="Provided by admin"
               />
 
               <label>Phone (must match member record)</label>
