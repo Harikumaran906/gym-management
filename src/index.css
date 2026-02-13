@@ -1,0 +1,65 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  color: #111;
+}
+
+a {
+  color: #111;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.box {
+  background: white;
+  border: 1px solid black;
+  padding: 12px;
+  margin-top: 12px;
+}
+
+input,
+select,
+button,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid black;
+  margin-top: 6px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+button {
+  cursor: pointer;
+  background: white;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 800px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.small {
+  font-size: 13px;
+  color: #333;
+}
+
+.hr {
+  margin: 14px 0;
+  border: none;
+  border-top: 1px solid black;
+}
