@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import AdminDashboard from "./pages/AdminDashboard";
 import MemberDashboard from "./pages/MemberDashboard";
 import UserDashboard from "./pages/UserDashboard";
+import RegisterPage from "./pages/RegisterPage";
 
 import { watchAuth } from "./services/authService";
 import { setAuth, setLoading } from "./redux/authActions";
@@ -62,6 +63,7 @@ export default function App() {
         />
 
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
 
         <Route
           path="/admin"

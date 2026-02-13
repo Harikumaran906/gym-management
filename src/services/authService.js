@@ -3,8 +3,9 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
+  createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
+import { doc, getDoc, setDoc } from "firebase/firestore";
 import { logAction } from "./logService";
 
 export function watchAuth(callback) {
@@ -38,4 +39,13 @@ export async function login(email, password) {
 export async function logout(email) {
   await signOut(auth);
   await logAction("LOGOUT", "User signed out", email);
+}
+
+export async function registerUser(email, password, userData) {
+  const res = await createUserWithEmailAndPassword(auth, email, password);
+
+  await setDoc(doc(db, "users", res.user.uid), userData);
+
+  await logAction("REGISTER", "User registered with role " + userData.role, email);
+  return res.user;
 }

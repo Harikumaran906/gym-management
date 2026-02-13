@@ -24,6 +24,7 @@ export default function NavBar() {
           <Link to="/">Home</Link>
 
           {!user && <Link to="/login">Sign In</Link>}
+          {!user && <Link to="/register">Register</Link>}
 
           {user && role === "admin" && <Link to="/admin">Admin</Link>}
           {user && role === "member" && <Link to="/member">Member</Link>}

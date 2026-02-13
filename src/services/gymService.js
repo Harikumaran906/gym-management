@@ -99,3 +99,20 @@ export async function getAllNotifications() {
   snap.forEach((d) => list.push({ id: d.id, ...d.data() }));
   return list;
 }
+
+export async function validateMemberLink(memberId, phone) {
+  try {
+    const snap = await getDoc(doc(db, "members", memberId));
+    if (!snap.exists()) return false;
+
+    const data = snap.data();
+
+    const dbPhone = (data.phone || "").toString().trim();
+    const inputPhone = (phone || "").toString().trim();
+
+    return dbPhone === inputPhone;
+  } catch (err) {
+    console.log(err);
+    return false;
+  }
+}
